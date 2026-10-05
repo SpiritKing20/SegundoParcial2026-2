@@ -29,7 +29,7 @@ const indieGames = [
     genre: 'Plataformas',
     rating: '4.8',
     image: celesteImg,
-    buttonText: 'Jugar'
+    buttonText: 'Ver Detalles'
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ const indieGames = [
     genre: 'Roguelite',
     rating: '4.8',
     image: deadCellsImg,
-    buttonText: 'Jugar'
+    buttonText: 'Ver Detalles'
   },
   {
     id: 5,
@@ -65,7 +65,7 @@ const indieGames = [
     genre: 'Run & Gun',
     rating: '4.7',
     image: cupheadImg,
-    buttonText: 'Jugar'
+    buttonText: 'Ver Detalles'
   }
 ];
 

@@ -6,15 +6,12 @@ function Sidebar() {
       <nav className="sidebar-nav">
         <ul className="sidebar-menu">
           <li className="sidebar-item active">
-
             <span className="sidebar-text">Explorar</span>
           </li>
           <li className="sidebar-item">
-
             <span className="sidebar-text">Géneros</span>
           </li>
           <li className="sidebar-item">
- 
             <span className="sidebar-text">Mis Favoritos</span>
           </li>
         </ul>
