@@ -11,7 +11,7 @@ const indieGames = [
     developer: 'Team Cherry',
     genre: 'Metroidvania',
     rating: '4.9',
-    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=700&auto=format&fit=crop&q=80',
+    image: './assets/hollow_knight.jpg',
     buttonText: 'Ver Detalles'
   },
   {
@@ -20,7 +20,7 @@ const indieGames = [
     developer: 'Maddy Makes Games',
     genre: 'Plataformas',
     rating: '4.8',
-    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=700&auto=format&fit=crop&q=80',
+    image: './assets/celeste.jpg',
     buttonText: 'Jugar'
   },
   {
@@ -29,7 +29,7 @@ const indieGames = [
     developer: 'Supergiant Games',
     genre: 'Roguelike',
     rating: '4.9',
-    image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=700&auto=format&fit=crop&q=80',
+    image: './assets/hades.jpg',
     buttonText: 'Ver Detalles'
   },
   {
@@ -38,7 +38,7 @@ const indieGames = [
     developer: 'Motion Twin',
     genre: 'Roguelite',
     rating: '4.8',
-    image: 'https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?w=700&auto=format&fit=crop&q=80',
+    image: './assets/dead_cells.jpg',
     buttonText: 'Jugar'
   },
   {
@@ -47,7 +47,7 @@ const indieGames = [
     developer: 'ConcernedApe',
     genre: 'Simulación / RPG',
     rating: '4.9',
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700&auto=format&fit=crop&q=80',
+    image: './assets/stardew_valley.jpg',
     buttonText: 'Ver Detalles'
   },
   {
@@ -56,7 +56,7 @@ const indieGames = [
     developer: 'Studio MDHR',
     genre: 'Run & Gun',
     rating: '4.7',
-    image: 'https://images.unsplash.com/photo-1563089145-599997674d42?w=700&auto=format&fit=crop&q=80',
+    image: './assets/cuphead.jpg',
     buttonText: 'Jugar'
   }
 ];
