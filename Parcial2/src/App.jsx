@@ -1,0 +1,104 @@
+import React from 'react';
+import Header from './componentes/Header';
+import Sidebar from './componentes/Sidebar';
+import GameCard from './componentes/GameCard';
+import './style.css';
+
+const indieGames = [
+  {
+    id: 1,
+    title: 'Hollow Knight',
+    developer: 'Team Cherry',
+    genre: 'Metroidvania',
+    rating: '4.9',
+    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=700&auto=format&fit=crop&q=80',
+    buttonText: 'Ver Detalles'
+  },
+  {
+    id: 2,
+    title: 'Celeste',
+    developer: 'Maddy Makes Games',
+    genre: 'Plataformas',
+    rating: '4.8',
+    image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=700&auto=format&fit=crop&q=80',
+    buttonText: 'Jugar'
+  },
+  {
+    id: 3,
+    title: 'Hades',
+    developer: 'Supergiant Games',
+    genre: 'Roguelike',
+    rating: '4.9',
+    image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=700&auto=format&fit=crop&q=80',
+    buttonText: 'Ver Detalles'
+  },
+  {
+    id: 4,
+    title: 'Dead Cells',
+    developer: 'Motion Twin',
+    genre: 'Roguelite',
+    rating: '4.8',
+    image: 'https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?w=700&auto=format&fit=crop&q=80',
+    buttonText: 'Jugar'
+  },
+  {
+    id: 5,
+    title: 'Stardew Valley',
+    developer: 'ConcernedApe',
+    genre: 'Simulación / RPG',
+    rating: '4.9',
+    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700&auto=format&fit=crop&q=80',
+    buttonText: 'Ver Detalles'
+  },
+  {
+    id: 6,
+    title: 'Cuphead',
+    developer: 'Studio MDHR',
+    genre: 'Run & Gun',
+    rating: '4.7',
+    image: 'https://images.unsplash.com/photo-1563089145-599997674d42?w=700&auto=format&fit=crop&q=80',
+    buttonText: 'Jugar'
+  }
+];
+
+function App() {
+  return (
+    <div className="app-container">
+      {/* Componente 1: Header */}
+      <Header />
+
+      {/* Componente 4: Dashboard (Contenedor Principal que agrupa Sidebar y Cuadrícula de GameCards) */}
+      <div className="dashboard-container">
+        {/* Componente 2: Sidebar */}
+        <Sidebar />
+
+        {/* Área Principal con Catálogo de Videojuegos */}
+        <main className="catalog-content">
+          <section className="catalog-header-section">
+            <h2 className="catalog-heading">Catálogo de Videojuegos Indie</h2>
+            <p className="catalog-subheading">
+              Descubre las mejores joyas independientes creadas por desarrolladores apasionados.
+            </p>
+          </section>
+
+          {/* Cuadrícula (Grid) de Cards */}
+          <section className="games-grid" aria-label="Lista de videojuegos">
+            {indieGames.map((game) => (
+              <GameCard
+                key={game.id}
+                title={game.title}
+                developer={game.developer}
+                image={game.image}
+                genre={game.genre}
+                rating={game.rating}
+                buttonText={game.buttonText}
+              />
+            ))}
+          </section>
+        </main>
+      </div>
+    </div>
+  );
+}
+
+export default App;
