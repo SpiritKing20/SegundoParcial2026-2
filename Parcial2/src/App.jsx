@@ -82,8 +82,46 @@ const indieGames = [
   }
 ];
 
+const availableGenres = [
+  'Metroidvania',
+  'Plataformas',
+  'Roguelike',
+  'Roguelite',
+  'Simulación / RPG',
+  'Run & Gun'
+];
+
 function App() {
   const [selectedGame, setSelectedGame] = useState(null);
+  const [activeSection, setActiveSection] = useState('explorar');
+  const [selectedGenre, setSelectedGenre] = useState(null);
+  const [favorites, setFavorites] = useState([]);
+
+  // Alternar favorito
+  const handleToggleFavorite = (id) => {
+    setFavorites((prev) =>
+      prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id]
+    );
+  };
+
+  // Calcular lista de juegos a mostrar
+  let displayedGames = [...indieGames];
+
+  // Si se seleccionó un género específico
+  if (selectedGenre) {
+    displayedGames = displayedGames.filter((game) => game.genre === selectedGenre);
+  }
+
+  // Si se presionó "Mis Favoritos", mover los favoritos al principio del orden
+  if (activeSection === 'favoritos') {
+    displayedGames.sort((a, b) => {
+      const aFav = favorites.includes(a.id);
+      const bFav = favorites.includes(b.id);
+      if (aFav && !bFav) return -1;
+      if (!aFav && bFav) return 1;
+      return 0;
+    });
+  }
 
   return (
     <div className="app-container">
@@ -92,21 +130,46 @@ function App() {
 
       {/* Componente 4: Dashboard (Contenedor Principal que agrupa Sidebar y Cuadrícula de GameCards) */}
       <div className="dashboard-container">
-        {/* Componente 2: Sidebar */}
-        <Sidebar />
+        {/* Componente 2: Sidebar con interacción de Géneros y Mis Favoritos */}
+        <Sidebar
+          activeSection={activeSection}
+          onSelectSection={(section) => {
+            setActiveSection(section);
+            if (section !== 'generos') setSelectedGenre(null);
+          }}
+          genres={availableGenres}
+          selectedGenre={selectedGenre}
+          onSelectGenre={(genre) => {
+            setSelectedGenre(genre);
+            setActiveSection('generos');
+          }}
+          favoritesCount={favorites.length}
+        />
 
         {/* Área Principal con Catálogo de Videojuegos */}
         <main className="catalog-content">
           <section className="catalog-header-section">
-            <h2 className="catalog-heading">Catálogo de Videojuegos Indie</h2>
+            <h2 className="catalog-heading">
+              {activeSection === 'favoritos'
+                ? '⭐ Mis Favoritos'
+                : selectedGenre
+                ? `Género: ${selectedGenre}`
+                : 'Catálogo de Videojuegos Indie'}
+            </h2>
             <p className="catalog-subheading">
-              Descubre las mejores joyas independientes creadas por desarrolladores apasionados.
+              {activeSection === 'favoritos'
+                ? favorites.length > 0
+                  ? 'Tus videojuegos favoritos se encuentran ordenados al principio de la lista.'
+                  : 'Aún no has marcado ningún favorito. Haz clic en el corazón (🤍) de cualquier juego para marcarlo.'
+                : selectedGenre
+                ? `Mostrando juegos de la categoría ${selectedGenre}.`
+                : 'Descubre las mejores joyas independientes creadas por desarrolladores apasionados.'}
             </p>
           </section>
 
           {/* Cuadrícula (Grid) de Cards */}
           <section className="games-grid" aria-label="Lista de videojuegos">
-            {indieGames.map((game) => (
+            {displayedGames.map((game) => (
               <GameCard
                 key={game.id}
                 title={game.title}
@@ -115,6 +178,8 @@ function App() {
                 genre={game.genre}
                 rating={game.rating}
                 buttonText={game.buttonText}
+                isFavorite={favorites.includes(game.id)}
+                onToggleFavorite={() => handleToggleFavorite(game.id)}
                 onSelect={() => setSelectedGame(game)}
               />
             ))}
