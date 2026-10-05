@@ -4,6 +4,14 @@ import Sidebar from './componentes/Sidebar';
 import GameCard from './componentes/GameCard';
 import './style.css';
 
+// Importación de las imágenes locales desde src/img
+import hollowKnightImg from './img/Hollow_Knight.jpg';
+import celesteImg from './img/Celeste.jpg';
+import hadesImg from './img/Hades.jpg';
+import deadCellsImg from './img/Dead_Cells.jpg';
+import stardewValleyImg from './img/Stardew_Valley.jpg';
+import cupheadImg from './img/Cuphead.jpg';
+
 const indieGames = [
   {
     id: 1,
@@ -11,7 +19,7 @@ const indieGames = [
     developer: 'Team Cherry',
     genre: 'Metroidvania',
     rating: '4.9',
-    image: './assets/hollow_knight.jpg',
+    image: hollowKnightImg,
     buttonText: 'Ver Detalles'
   },
   {
@@ -20,7 +28,7 @@ const indieGames = [
     developer: 'Maddy Makes Games',
     genre: 'Plataformas',
     rating: '4.8',
-    image: './assets/celeste.jpg',
+    image: celesteImg,
     buttonText: 'Jugar'
   },
   {
@@ -29,7 +37,7 @@ const indieGames = [
     developer: 'Supergiant Games',
     genre: 'Roguelike',
     rating: '4.9',
-    image: './assets/hades.jpg',
+    image: hadesImg,
     buttonText: 'Ver Detalles'
   },
   {
@@ -38,7 +46,7 @@ const indieGames = [
     developer: 'Motion Twin',
     genre: 'Roguelite',
     rating: '4.8',
-    image: './assets/dead_cells.jpg',
+    image: deadCellsImg,
     buttonText: 'Jugar'
   },
   {
@@ -47,7 +55,7 @@ const indieGames = [
     developer: 'ConcernedApe',
     genre: 'Simulación / RPG',
     rating: '4.9',
-    image: './assets/stardew_valley.jpg',
+    image: stardewValleyImg,
     buttonText: 'Ver Detalles'
   },
   {
@@ -56,7 +64,7 @@ const indieGames = [
     developer: 'Studio MDHR',
     genre: 'Run & Gun',
     rating: '4.7',
-    image: './assets/cuphead.jpg',
+    image: cupheadImg,
     buttonText: 'Jugar'
   }
 ];
