@@ -4,7 +4,6 @@ function Header() {
   return (
     <header className="header">
       <div className="header-brand">
-        <span className="brand-icon">🎮</span>
         <h1 className="header-title">IndiePlay - Catálogo</h1>
       </div>
       <div className="header-actions">
