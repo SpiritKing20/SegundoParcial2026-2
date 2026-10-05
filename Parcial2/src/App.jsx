@@ -151,7 +151,7 @@ function App() {
           <section className="catalog-header-section">
             <h2 className="catalog-heading">
               {activeSection === 'favoritos'
-                ? '⭐ Mis Favoritos'
+                ? 'Mis Favoritos'
                 : selectedGenre
                 ? `Género: ${selectedGenre}`
                 : 'Catálogo de Videojuegos Indie'}
