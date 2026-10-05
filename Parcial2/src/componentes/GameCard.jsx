@@ -6,7 +6,8 @@ function GameCard({
   image = 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80',
   buttonText = 'Ver Detalles',
   genre = 'Aventura',
-  rating = '4.9'
+  rating = '4.9',
+  onSelect
 }) {
   return (
     <article className="game-card">
@@ -26,7 +27,7 @@ function GameCard({
           <span className="dev-label">Desarrollador:</span> {developer}
         </p>
         <div className="game-card-footer">
-          <button className="btn-action" type="button">
+          <button className="btn-action" type="button" onClick={onSelect}>
             {buttonText}
           </button>
         </div>
