@@ -132,7 +132,6 @@ body {
   padding: 1.75rem 1.25rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .sidebar-nav {
@@ -228,21 +227,6 @@ body {
   padding: 0.15rem 0.55rem;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
-}
-
-.sidebar-footer {
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-color);
-}
-
-.sidebar-badge {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  text-align: center;
-  background: rgba(255, 255, 255, 0.04);
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* ==========================================================
@@ -438,10 +422,6 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
-
-  .sidebar-footer {
-    display: none;
   }
 
   .catalog-content {

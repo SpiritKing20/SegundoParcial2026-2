@@ -87,9 +87,6 @@ function Sidebar({
         </ul>
       </nav>
 
-      <div className="sidebar-footer">
-        <div className="sidebar-badge">IndiePlay v1.0</div>
-      </div>
     </aside>
   );
 }
