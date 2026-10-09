@@ -82,9 +82,7 @@ body {
   font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: -0.5px;
-  background: linear-gradient(135deg, #ffffff 30%, #818cf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
 }
 
 .header-actions {
@@ -545,17 +543,18 @@ body {
   font-weight: 700;
   padding: 0.3rem 0.7rem;
   border-radius: 6px;
+  color: #ffffff;
 }
 
 .modal-badge.genre {
-  color: #38bdf8;
+  color: #ffffff;
   text-transform: uppercase;
-  border: 1px solid rgba(56, 189, 248, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .modal-badge.rating {
-  color: var(--accent-amber);
-  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .modal-body {
